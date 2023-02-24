@@ -1,24 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbt-fe-goT">
+                                <rect key="frame" x="191.33333333333334" y="142" width="10.333333333333343" height="28"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="06c4f70ec5931e2342e703e8a3f0a253" translatesAutoresizingMaskIntoConstraints="NO" id="Yid-Wr-qIF">
+                                <rect key="frame" x="121.66666666666669" y="210" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="K7K-Ir-ozM"/>
+                                    <constraint firstAttribute="height" constant="150" id="fyi-aV-TRp"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctp-2H-gGN">
+                                <rect key="frame" x="136.66666666666666" y="424" width="119.99999999999997" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Get Weather"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ctp-2H-gGN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="IWZ-Ge-WsM"/>
+                            <constraint firstItem="Yid-Wr-qIF" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="b4V-hS-RPn"/>
+                            <constraint firstItem="ctp-2H-gGN" firstAttribute="top" secondItem="Yid-Wr-qIF" secondAttribute="bottom" constant="64" id="flZ-Ua-Z2X"/>
+                            <constraint firstItem="Yid-Wr-qIF" firstAttribute="top" secondItem="sbt-fe-goT" secondAttribute="bottom" constant="40" id="y0H-BV-1VU"/>
+                            <constraint firstItem="sbt-fe-goT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="83" id="y4h-lP-RpE"/>
+                            <constraint firstItem="sbt-fe-goT" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zut-Tr-njx"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="getWeatherButton" destination="ctp-2H-gGN" id="hed-Qp-cR5"/>
+                        <outlet property="weatherLabel" destination="sbt-fe-goT" id="6ff-6d-9ar"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="35.877862595419849" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="06c4f70ec5931e2342e703e8a3f0a253" width="1024" height="1024"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
